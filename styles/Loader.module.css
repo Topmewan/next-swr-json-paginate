@@ -1,0 +1,8 @@
+.container {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

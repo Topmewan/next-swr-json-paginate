@@ -14,3 +14,19 @@ a {
 * {
   box-sizing: border-box;
 }
+.wrap{
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+a{
+  cursor: pointer;
+}
+
+@import url('./header.css');
+@import url('./card.css');
+
+:disabled {
+  opacity: 0.5;
+}

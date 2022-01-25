@@ -1,0 +1,57 @@
+header {
+    background-image: linear-gradient(120deg, #ffc3a0 0%,#ffafbd 100%);
+}
+
+header .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100px;
+}
+
+header form {
+    height: 40px;
+    margin: 10px 0;
+}
+
+header form input,
+header form button{
+    height: 100%;
+    border: 1px solid black;
+    outline: none;
+    padding: 0 10px;
+    margin: 0 3px;
+    background: transparent;
+    cursor: pointer;
+}
+
+header .row {
+    display: flex;
+    color: palevioletred;
+    margin: 10px 0;
+}
+
+header .row .prev,
+header .row .next {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 1.3rem;
+}
+
+header .row .prev:hover,
+header .row .next:hover {
+    color: white;
+}
+
+header .row span{
+    height: 45px;
+    line-height: 45px;
+    font-size: large;
+    font-weight: 600;
+}
