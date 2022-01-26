@@ -5,6 +5,7 @@ import {useUsers} from "../helpers/action";
 import {DataContext} from "../store/globalContext";
 import {useContext} from "react";
 import axios from "axios";
+import Image from "next/image";
 
 const Card = ({user}) => {
   const {page, limit, search} = useQuery();
@@ -27,7 +28,9 @@ const Card = ({user}) => {
       <Link href={`/users/${user?.id}`}>
         <a>
           <h1>{user.name}</h1>
-          <img src={user?.avatar} loading='lazy' alt=""/>
+          <div className={styles.imgContainer}>
+            <Image src={user?.avatar} layout={'fill'} objectFit={'cover'} priority/>
+          </div>
         </a>
       </Link>
       <div className={styles.menu}>

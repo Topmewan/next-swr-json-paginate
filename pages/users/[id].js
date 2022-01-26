@@ -3,6 +3,7 @@ import {useUser} from "../../helpers/action";
 import styles from '../../styles/User.module.css'
 import axios from "axios";
 import {useEffect, useState} from "react";
+import Image from "next/image";
 
 const User = ({initUser, id}) => {
   const [ssrUser, setSsrUser] = useState(initUser);
@@ -23,7 +24,9 @@ const User = ({initUser, id}) => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <img className={styles.image} src={ssrUser.avatar} alt=""/>
+        <div className={styles.imgContainer}>
+          <Image src={ssrUser.avatar} width={700} height={400} objectFit={'cover'} priority/>
+        </div>
         <div className={styles.name}>
           <p>{ssrUser.name}</p>
         </div>
@@ -37,9 +40,9 @@ export async function getStaticPaths() {
   const users = res.data;
 
   const paths = users.map((user) => ({
-    params: { id: user.id.toString()},
+    params: {id: user.id.toString()},
   }))
-  return  { paths, fallback: 'blocking' }
+  return {paths, fallback: 'blocking'}
 }
 
 export async function getStaticProps({params}) {
@@ -47,7 +50,7 @@ export async function getStaticProps({params}) {
   return {
     props: {
       initUser: res.data,
-      id:params.id
+      id: params.id
     },
     revalidate: 10,
   }
