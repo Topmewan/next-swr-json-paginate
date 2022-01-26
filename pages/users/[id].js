@@ -36,7 +36,7 @@ const User = ({initUser, id}) => {
 };
 
 export async function getStaticPaths() {
-  const res = await axios.get('http://localhost:5000/users/?_sort=createdAt&_order=desc');
+  let res = await axios.get('http://localhost:5000/users/?_sort=createdAt&_order=desc');
   const users = res.data;
 
   const paths = users.map((user) => ({
@@ -46,7 +46,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-  const res = await axios.get(`http://localhost:5000/users/${params.id}`);
+  let res = await axios.get(`http://localhost:5000/users/${params.id}`);
   return {
     props: {
       initUser: res.data,
