@@ -2,8 +2,9 @@ import Head from "next/head";
 import Page from "../components/Page";
 import useQuery from "../helpers/useQuery";
 import Input from "../components/Input";
+import axios from "axios";
 
-export default function Home() {
+export default function Home({initUsers}) {
 
   const {page, limit, search} = useQuery();
 
@@ -17,16 +18,27 @@ export default function Home() {
               crossOrigin="anonymous" referrerPolicy="no-referrer"/>
       </Head>
       <main>
-
         <div className='user_input_container'>
           <Input/>
         </div>
-
-        <Page page={page} limit={limit} search={search}/>
-
+        <Page
+          initUsers={initUsers}
+          page={page}
+          limit={limit}
+          search={search}
+        />
       </main>
-
-
     </div>
   )
+}
+
+export async function getStaticProps() {
+  let url = 'http://localhost:5000/users/?_sort=createdAt&_order=desc';
+  const res = await axios.get(url);
+  return {
+    props: {
+      initUsers: res.data
+    },
+    revalidate: 10
+  }
 }
