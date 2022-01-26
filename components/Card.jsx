@@ -15,7 +15,7 @@ const Card = ({user}) => {
     const newUsers = users.filter(user => user.id !== id);
     mutate(newUsers, false);
     await axios.delete(`http://localhost:5000/users/${id}`);
-    mutate()
+    mutate();
   }
 
   const handleUpdate = (user) => {

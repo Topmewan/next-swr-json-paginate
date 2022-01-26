@@ -1,16 +1,14 @@
-import Card from "./Card";
+import {useEffect, useState} from "react";
 import {useUsers} from "../helpers/action";
+import Card from "./Card";
 import Loader from "./Loader";
 import styles from '../styles/Page.module.css';
-import {useEffect, useState} from "react";
 
-const Page = ({page, limit, search, initUsers}) => {
+const Page = ({initUsers,page, limit, search}) => {
   const [ssrData, setSsrData] = useState(initUsers);
   const [isSWR, setIsSWR] = useState(false);
   const {users, isLoading, isError} = useUsers(page, limit, search);
 
-  if (isSWR && isLoading) return <Loader/>
-  if (isSWR && isError) return <h1>{isError}</h1>
 
   useEffect(() => {
     if (users) {
@@ -19,10 +17,13 @@ const Page = ({page, limit, search, initUsers}) => {
     }
   }, [users])
 
+  if (isSWR && isLoading) return <Loader/>
+  if (isSWR && isError) return <h1>{isError}</h1>
+
   return (
     <>
       <div className={styles.card_container}>
-        {users?.map(user => <Card key={user.id} user={user}/>)}
+        {ssrData?.map(user => <Card key={user.id} user={user}/>)}
       </div>
     </>
 

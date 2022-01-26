@@ -19,12 +19,6 @@
       "id": "kVkPgpt"
     },
     {
-      "name": "MEME",
-      "avatar": "https://images.pexels.com/photos/1319911/pexels-photo-1319911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "createdAt": "2021-10-13T15:33:12.596Z",
-      "id": "Y1gtrYJ"
-    },
-    {
       "name": "Taylor",
       "avatar": "https://images.pexels.com/photos/1308885/pexels-photo-1308885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
       "createdAt": "2021-10-14T06:38:35.805Z",
@@ -74,15 +68,21 @@
     },
     {
       "id": 1643189404958,
-      "name": "Friend",
+      "name": "Братка",
       "avatar": "https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
       "createdAt": "2022-01-26T09:30:04.958Z"
     },
     {
-      "id": 1643192516468,
-      "name": "Hand",
-      "avatar": "https://images.pexels.com/photos/4085434/pexels-photo-4085434.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      "createdAt": "2022-01-26T10:21:56.468Z"
+      "id": 1643228951619,
+      "name": "Girl",
+      "avatar": "https://images.pexels.com/photos/10550252/pexels-photo-10550252.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      "createdAt": "2022-01-26T20:29:11.619Z"
+    },
+    {
+      "id": 1643228995500,
+      "name": "Heh",
+      "avatar": "https://images.pexels.com/photos/5149163/pexels-photo-5149163.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      "createdAt": "2022-01-26T20:29:55.500Z"
     }
   ]
 }

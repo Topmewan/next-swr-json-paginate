@@ -20,7 +20,6 @@ const User = ({initUser, id}) => {
   if (isSWR && isLoading) return <Loader/>
   if (isSWR && isError) return <h1>{isError}</h1>
 
-
   return (
     <div className={styles.container}>
       <div className={styles.content}>
