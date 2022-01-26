@@ -1,0 +1,66 @@
+
+.card {
+    width: 30%;
+    margin: 1rem;
+    background: white;
+    box-shadow: 2px 4px 25px rgba(0,0,0, .1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .2s linear;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.card h1 {
+    text-align: center;
+}
+
+@media  screen and (max-width: 800px) {
+    .card {
+        flex: 100%;
+    }
+
+}
+
+.menu{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+
+}
+
+.card:hover .menu{
+    display: block;
+}
+
+.menu i{
+    background: #eee4;
+    padding: 1.4rem;
+    margin: 0.5rem;
+    border-radius: 50%;
+    border: 1px solid #fff6;
+}
+
+.menu i:hover {
+    border: 1px solid #fff;
+    box-shadow: 0 0 20px #fff;
+    filter: saturate(1.1);
+    transform: scale(1.1);
+    transition: 0.5s ease-out;
+}
+
+
+

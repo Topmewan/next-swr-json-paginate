@@ -2,6 +2,8 @@ import Link from "next/link";
 import {useEffect, useState} from "react";
 import {useRouter} from "next/router";
 import {useUsers} from "../helpers/action";
+import styles from '../styles/Header.module.css';
+import Button from "./Ui/Button";
 
 const Navbar = () => {
 
@@ -46,18 +48,17 @@ const Navbar = () => {
   }
 
   return (
-    <header>
-      <div className="nav wrap">
+    <header className={styles.header}>
+      <div className={styles.nav}>
         <div className="logo">
           {pathname !== '/'
-            ? <div onClick={() => router.back()}>
-              A
+            ? <div onClick={() => router.back()} style={{cursor: 'pointer'}}>
+              Go back
             </div>
-            : <Link href={`/?page=${1}&limit=${limit}`} replace>
-              <a href="">HI</a>
+            : <Link href={`/?page=${1}&limit=${limit}`} replace shallow={true}>
+              <a href="">Home</a>
             </Link>}
         </div>
-
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -66,28 +67,26 @@ const Navbar = () => {
             onChange={handleChange}
             value={search}
             disabled={pathname !== '/'}/>
-          <button
-            disabled={pathname !== '/'}
-          >Search
-          </button>
+
+          <Button disabled={pathname !== '/'} className='buttonClassic'>
+            Search
+          </Button>
         </form>
 
-        <div className="row">
-          <button
-            className='prev'
-            aria-label='prev'
+        <div className={styles.row}>
+          <Button
             onClick={() => handlePaginate(page - 1)}
-            disabled={pathname !== '/' || (page === 1)}>
+            disabled={pathname !== '/' || (page === 1)}
+          >
             <i className="fas fa-chevron-left"></i>
-          </button>
+          </Button>
           <span>{page}</span>
-          <button
-            className='next'
-            aria-label='next'
+          <Button
             onClick={() => handlePaginate(page + 1)}
-            disabled={pathname !== '/' || isLoading || !users.length}>
+            disabled={pathname !== '/' || isLoading || !users.length}
+          >
             <i className="fas fa-chevron-right"></i>
-          </button>
+          </Button>
         </div>
 
         <div>

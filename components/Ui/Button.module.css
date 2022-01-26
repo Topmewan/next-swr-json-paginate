@@ -1,0 +1,24 @@
+.buttonStep {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 1.3rem;
+}
+
+.button:hover {
+    color: white;
+}
+
+.buttonClassic{
+    height: 100%;
+    border: 1px solid black;
+    outline: none;
+    padding: 0 10px;
+    margin: 0 3px;
+    background: transparent;
+    cursor: pointer;
+}

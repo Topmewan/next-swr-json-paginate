@@ -1,6 +1,7 @@
 import Card from "./Card";
 import {useUsers} from "../helpers/action";
 import Loader from "./Loader";
+import styles from '../styles/Page.module.css';
 
 const Page = ({page,limit,search}) => {
   const { users, isLoading, isError } = useUsers(page,limit,search);
@@ -10,7 +11,7 @@ const Page = ({page,limit,search}) => {
 
   return (
     <>
-      <div className='card_container'>
+      <div className={styles.card_container}>
         {users?.map(user => <Card key={user.id} user={user}/>)}
       </div>
     </>

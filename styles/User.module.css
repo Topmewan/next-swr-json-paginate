@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.content {
+    max-width: 700px;
+    width: 60%;
+    box-shadow: 2px 2px 5px 0px rgba(40, 36, 26, 0.88);
+}
+
+.name {
+    text-align: center;
+}
+.image {
+    width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+@media screen and (max-width: 800px){
+    .content{
+        flex: 1;
+    }
+
+}
+
+

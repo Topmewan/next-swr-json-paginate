@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Page from "../components/Page";
 import useQuery from "../helpers/useQuery";
+import Input from "../components/Input";
 
 export default function Home() {
 
@@ -16,16 +17,12 @@ export default function Home() {
               crossOrigin="anonymous" referrerPolicy="no-referrer"/>
       </Head>
       <main>
-        {/*<div style={{display:'none'}}>*/}
-        {/*  <Page page={page -1} limit={limit} search={search}/>*/}
-        {/*</div>*/}
+
+        <div className='user_input_container'>
+          <Input/>
+        </div>
 
         <Page page={page} limit={limit} search={search}/>
-
-        {/*<div style={{display:'none'}}>*/}
-        {/*  <Page page={page +1} limit={limit} search={search}/>*/}
-
-        {/*</div>*/}
 
       </main>
 
