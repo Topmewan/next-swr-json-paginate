@@ -33,7 +33,7 @@ export default function Home({initUsers}) {
 }
 
 export async function getStaticProps() {
-  let url = 'http://localhost:5000/users/?_sort=createdAt&_order=desc';
+  const url = 'http://localhost:5000/users/';
   const res = await axios.get(url);
   return {
     props: {

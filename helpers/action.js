@@ -1,12 +1,12 @@
 import useSWR from 'swr';
 
 export function useUsers (page,limit,search) {
-  let url = 'http://localhost:5000/users/?_sort=createdAt&_order=desc'
+  let url = 'http://localhost:5000/users/'
 
   if(search){
-    url = `${url}&q=${search}`
+    url = `${url}?q=${search}`
   } else {
-    url =`${url}&_page=${page}&_limit=${limit}`
+    url =`${url}?_page=${page}&_limit=${limit}`
   }
   const { data, error,mutate } = useSWR(url)
 
