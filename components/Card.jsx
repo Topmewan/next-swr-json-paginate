@@ -29,7 +29,7 @@ const Card = ({user}) => {
         <a>
           <h1>{user.name}</h1>
           <div className={styles.imgContainer}>
-            <Image src={user?.avatar} layout={'fill'} objectFit={'cover'} priority/>
+            <Image src={user?.avatar} layout={'fill'} objectFit={'cover'} priority alt={'avatar'}/>
           </div>
         </a>
       </Link>

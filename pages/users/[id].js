@@ -25,7 +25,7 @@ const User = ({initUser, id}) => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.imgContainer}>
-          <Image src={ssrUser.avatar} width={700} height={400} objectFit={'cover'} priority/>
+          <Image src={ssrUser.avatar} width={700} height={400} objectFit={'cover'} priority alt={'avatar'}/>
         </div>
         <div className={styles.name}>
           <p>{ssrUser.name}</p>
